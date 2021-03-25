@@ -93,5 +93,6 @@ public class Playermovement : MonoBehaviour
     public void Endurraesa() // endurræsir í senu 1, sem er fyrra borðið
     {
         SceneManager.LoadScene(1);
+        count = 0;
     }
 }
