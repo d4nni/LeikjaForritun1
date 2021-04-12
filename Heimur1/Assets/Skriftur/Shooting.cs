@@ -19,7 +19,7 @@ public class Shooting : MonoBehaviour
             Rigidbody instBulletRigidbody = instBullet.GetComponent<Rigidbody>();
             instBulletRigidbody.AddForce(transform.forward * speed);
             Destroy(instBullet, 0.5f);//kúl eeytt eftir 0.5sek
-           
+          
         }
     }
 }
