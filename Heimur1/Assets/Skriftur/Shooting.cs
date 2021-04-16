@@ -12,7 +12,7 @@ public class Shooting : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.F))
         {
-            Debug.Log("skjOtttttttt");       
+            Debug.Log("pew");       
            
            // GameObject instBullet = Instantiate(bullet, transform.position, Quaternion.identity) as GameObject;
             GameObject instBullet = Instantiate(bullet, transform.position, transform.rotation) as GameObject;

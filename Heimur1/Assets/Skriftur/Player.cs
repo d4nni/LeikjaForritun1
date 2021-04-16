@@ -5,7 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public static int count;
-    public static int health = 5;
+    public static int health = 3;
 
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
