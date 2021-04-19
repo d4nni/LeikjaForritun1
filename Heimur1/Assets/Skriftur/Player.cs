@@ -31,21 +31,23 @@ public class Player : MonoBehaviour
             hit.collider.gameObject.SetActive(false);
             Debug.Log("Rakst á stóran óvin");
         }
-        if (hit.collider.tag == "vatn")
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.GetComponent<Collider>().tag == "vatn")
         {
-            Debug.Log("Datt í vatn");
-            // hér kemur lína til að endurræsa leikinn
-            StartCoroutine(Bida()); // byrjar rútínuna Bíða
+            StartCoroutine(Bida());
         }
     }
-    IEnumerator Bida() // bíður í tvær sek og kallar í fallið endurræsa
+    IEnumerator Bida() // bíður í eina sek og kallar í fallið endurræsa
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1);
         Endurraesa();
     }
     public void Endurraesa() // endurræsir í senu 1, sem er fyrra borðið
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        //SceneManager.LoadScene(0);
         count = 0;
         health = 3;
         Bullet.count = 0;
