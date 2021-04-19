@@ -18,7 +18,7 @@ public class Shooting : MonoBehaviour
             GameObject instBullet = Instantiate(bullet, transform.position, transform.rotation) as GameObject;
             Rigidbody instBulletRigidbody = instBullet.GetComponent<Rigidbody>();
             instBulletRigidbody.AddForce(transform.forward * speed);
-            Destroy(instBullet, 0.5f);//kúl eeytt eftir 0.5sek
+            Destroy(instBullet, 1);//kúl eeytt eftir 0.5sek
           
         }
     }
