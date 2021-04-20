@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class ByssaSnu : MonoBehaviour
 {
-    public Transform kamera;
+    public Transform kamera; // tekur inn transformation hjá kameru
 
-    // Update is called once per frame
     void Update()
     {
-        transform.rotation = kamera.rotation;
+        transform.rotation = kamera.rotation; // hreyfir hlut eftir staðsetningu kameru
     }
 }

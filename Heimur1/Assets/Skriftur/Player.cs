@@ -8,6 +8,13 @@ public class Player : MonoBehaviour
     public static int count;
     public static int health = 3;
 
+    void Update()
+    {
+        if (health <= 0)
+        {
+            Die();
+        }
+    }
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
         if (hit.collider.tag == "peningur1") 
@@ -41,7 +48,7 @@ public class Player : MonoBehaviour
     }
     IEnumerator Bida() // bíður í eina sek og kallar í fallið endurræsa
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.5f);
         Endurraesa();
     }
     public void Endurraesa() // endurræsir í senu 1, sem er fyrra borðið
@@ -51,5 +58,9 @@ public class Player : MonoBehaviour
         count = 0;
         health = 3;
         Bullet.count = 0;
+    }
+    void Die()
+    {
+      
     }
 }
