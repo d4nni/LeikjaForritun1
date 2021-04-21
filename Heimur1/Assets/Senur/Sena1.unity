@@ -2898,8 +2898,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 474969212}
-  m_LocalRotation: {x: 0.06327758, y: -0.6341457, z: -0.042932663, w: -0.7694231}
-  m_LocalPosition: {x: 125.907166, y: -11.067342, z: -560.16974}
+  m_LocalRotation: {x: -0.041469395, y: 0.93649995, z: 0.11862742, w: 0.32737705}
+  m_LocalPosition: {x: -67.407684, y: -136.91142, z: -270.30865}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -10923,7 +10923,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 3332970850070077693, guid: 538570d4aa89e9c45a387bd1d6732492, type: 3}
-  speed: 25
 --- !u!1001 &2029407431
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11749,7 +11748,8 @@ PrefabInstance:
       propertyPath: daudi
       value: 
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2791203212628660405, guid: c577c5620a148f74291eab599ec5c3e0, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: c577c5620a148f74291eab599ec5c3e0, type: 3}
 --- !u!1001 &5322231567119686010
 PrefabInstance:

@@ -1,87 +1,37 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    public float speed=20f;
-    public Rigidbody rb;
-    public int damage = 10;
-    public static int count;
-    private static int telurStora = 0;
+    private int speed = 20; // hraða breyta
+    public Rigidbody rb; // rigidbody kúlu
+    public static int count; // count fyrir óvini drepna
+    private static int telurStora = 0; // telur hversu oft stórir óvinir eru hittir, áður en hann fellur
     void Start()
     {
-        rb.velocity = transform.forward  * speed;
+        rb.velocity = transform.forward  * speed; // hreyfir kúluna áfram þegar hún er kölluð til leiks
     }
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter(Collision collision) // árekstrar kúlu
     {
-        Debug.Log(collision.collider.name);
-        Debug.Log("danni hér");
-       // Ovinur ovinur = collision.collider.GetComponent<Ovinur>();
-        if (collision.collider.tag=="ovinur")
+        if (collision.collider.tag == "ovinur") // ef kúla rekst á venjulegan óvin
         {
-            count = count + 1;
-            Destroy(collision.gameObject);
+            count = count + 1; // bætir við einum í óvina dráp
+            Destroy(collision.gameObject); // eyðir óvin og setur false
             gameObject.SetActive(false);
-            Debug.Log("drap óvin");
-            // ovinur.TakeDamage(damage);//ná í aðferðina í klasanum Ovinur
-            //  Destroy(gameObject);//eyða kúlunni
-            // Debug.Log("kúlu eytt");
-            // collision.collider.gameObject.SetActive(false);
+            Debug.Log("drap óvin"); // gefur til kynna hvað gerðist
         }
-        if (collision.collider.tag=="storiOvinur")
+        if (collision.collider.tag == "storiOvinur") // ef það er stór óvinur
         {
-            telurStora = telurStora + 1;
-            Debug.Log("hitti stóran");
-            Debug.Log(telurStora);
-            if (telurStora == 3)
+            telurStora = telurStora + 1; // bætir einum við talningu stóra
+            Debug.Log("hitti stóran"); // gefur til kynna hvað gerðist
+            Debug.Log(telurStora); // sýnir hvað er komið upp í marga
+            if (telurStora == 3) // ef talið er upp í þrjá
             {
-                count = count + 3;
-                Destroy(collision.gameObject);
+                count = count + 3; // þá fær player 3 stig í óvina dráp
+                Destroy(collision.gameObject); // eyðir stóra óvin út og setur false
                 gameObject.SetActive(false);
-                Debug.Log("Drap stóran óvin");
-                telurStora = 0;
+                Debug.Log("Drap stóran óvin");// gefur til kynna hvað gerðist
+                telurStora = 0; // endurræsir countinn fyrir stóra óvin
             }
         }
-        /*
-        if (ovinur != null)
-        {
-            Debug.Log("hitti óvin");
-           // ovinur.TakeDamage(damage);//ná í aðferðina í klasanum Ovinur
-            Destroy(gameObject);//eyða kúlunni
-            Debug.Log("kúlu eytt");
-        }*/
-        else if (collision.collider.name != "Player")
-        {
-          //  Destroy(gameObject);//eyða kúlunni
-           // Debug.Log("kúlu líka eytt eytt");
-        }
     }
-    /*
-    private void OnTriggerEnter(Collider collision)
-    {
-        Debug.Log(collision.name);
-        Debug.Log("konni hér");
-        Ovinur ovinur = collision.GetComponent<Ovinur>();
-        if (ovinur!= null)
-        {
-            Debug.Log("hitti óvin");
-            ovinur.TakeDamage(damage);//ná í aðferðina í klasanum Ovinur
-            Destroy(gameObject);//eyða kúlunni
-            Debug.Log("kúlu eytt");
-        }
-        if (collision.name!="Player")
-        {
-            Destroy(gameObject);//eyða kúlunni
-            Debug.Log("kúlu líka eytt eytt");
-        }
-       
-   
-    } */
-    /*void SetCountText()
-    {
-        countText.text = "Kills: " + count.ToString();
-    }
-    */
 }

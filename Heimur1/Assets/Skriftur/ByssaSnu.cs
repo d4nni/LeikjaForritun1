@@ -8,6 +8,6 @@ public class ByssaSnu : MonoBehaviour
 
     void Update()
     {
-        transform.rotation = kamera.rotation; // hreyfir hlut eftir staðsetningu kameru
+        transform.rotation = kamera.rotation; // hreyfir byssu eftir staðsetningu kameru
     }
 }

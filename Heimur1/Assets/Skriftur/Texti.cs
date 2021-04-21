@@ -5,24 +5,25 @@ using UnityEngine.UI;
 
 public class Texti : MonoBehaviour
 {
-    private static int stigOvinir;
-    private static int stigPeningar;
-    private static int lif;
-    public Text ovinirText;
+    private static int stigOvinir; // býr til sér int fyrir óvinastig
+    private static int stigPeningar; // sama fyrir peninga
+    private static int lif; // og líf
+    public Text ovinirText; // býr til public texta fyrir allt líka
     public Text peningarText;
     public Text lifText;
     void Update()
     {
-        stigOvinir = Bullet.count;
-        SetOvinirText();
-        stigPeningar = Player.count;
+        stigOvinir = Bullet.count; // tekur inn í sig óvina dráp count
+        SetOvinirText(); // og kallar á óvinatexta function
+        stigPeningar = Player.count; // sama með peninga stig og líf
         SetPeningarText();
         lif = Player.health;
         SetHealthText();
     }
     void SetOvinirText()
     {
-        ovinirText.text = "Óvinir drepnir: " + stigOvinir.ToString();
+        ovinirText.text = "Óvinir drepnir: " + stigOvinir.ToString(); // convertar yfir í streng,
+        // sem hægt er svo að displaya in game
     }
     void SetPeningarText()
     {

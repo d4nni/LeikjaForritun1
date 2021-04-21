@@ -1,11 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Shooting : MonoBehaviour
 {
     public GameObject bullet; //bullet importað inn
-    public float speed = 25; // speed fyrir kúluna
+    private int speed = 20; // speed fyrir kúluna
     
     void Update()
     {
