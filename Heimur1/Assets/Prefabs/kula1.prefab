@@ -50,8 +50,6 @@ MonoBehaviour:
   speed: 20
   rb: {fileID: 992200090487464300}
   damage: 10
-  countText: {fileID: 6506887844355345006, guid: 01a1450cc0fef43498f969b53c94a3b9,
-    type: 3}
 --- !u!33 &8370285739132308352
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -78,7 +76,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1d07bd6158085954cae7f493bd99aa96, type: 2}
+  - {fileID: 2100000, guid: f93cfec2fc158c645ba0e9a16d744b92, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

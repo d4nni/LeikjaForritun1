@@ -66,6 +66,7 @@ public class Player : MonoBehaviour
     public void LeikLokid()
     {
         SceneManager.LoadScene(4);
+        health = 3;
     }
     public void Die()
     {
