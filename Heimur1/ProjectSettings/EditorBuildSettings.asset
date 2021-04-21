@@ -6,6 +6,18 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Senur/ByrjaSena.unity
+    guid: 8e2a1c9fa53970c4fb6361f0831ad3c3
+  - enabled: 1
     path: Assets/Senur/Sena1.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Senur/DaudurSena.unity
+    guid: 97b96bea8412a994c864d7a5fb99a604
+  - enabled: 1
+    path: Assets/Senur/DrukknadirSena.unity
+    guid: 69a2345c1ef1db8459e23ef09bde969a
+  - enabled: 1
+    path: Assets/Senur/EndaSena.unity
+    guid: 387295e80307f1a479ff42a09f47381a
   m_configObjects: {}

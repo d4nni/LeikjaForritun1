@@ -43,11 +43,12 @@ public class Player : MonoBehaviour
     {
         if (other.GetComponent<Collider>().tag == "vatn")
         {
-            StartCoroutine(Bida());
+            Debug.Log("Datt í vatn");
+            Drukknadi();
         }
         if (other.GetComponent<Collider>().tag == "endatrigger")
         {
-            
+            LeikLokid();
         }
     }
     IEnumerator Bida() // bíður í eina sek og kallar í fallið endurræsa
@@ -55,20 +56,29 @@ public class Player : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         Endurraesa();
     }
-    public void Endurraesa() // endurræsir í senu 1, sem er fyrra borðið
+    public void Endurraesa() // endurræsir í senu 1
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        //SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
         count = 0;
         health = 3;
         Bullet.count = 0;
     }
     public void LeikLokid()
     {
-
+        SceneManager.LoadScene(4);
     }
     public void Die()
     {
-        
+        SceneManager.LoadScene(2);
+        count = 0;
+        health = 3;
+        Bullet.count = 0;
+    }
+    public void Drukknadi()
+    {
+        SceneManager.LoadScene(3);
+        count = 0;
+        health = 3;
+        Bullet.count = 0;
     }
 }
