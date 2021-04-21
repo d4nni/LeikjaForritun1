@@ -19,9 +19,9 @@ public class Player : MonoBehaviour
     {
         if (hit.collider.tag == "peningur1") 
         {
+            hit.collider.gameObject.SetActive(false);
             count = count + 1;
             Destroy(hit.gameObject);
-            hit.collider.gameObject.SetActive(false);
             Debug.Log("peningur");
         }
         if (hit.collider.tag == "ovinur") 
