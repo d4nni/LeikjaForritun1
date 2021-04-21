@@ -45,6 +45,10 @@ public class Player : MonoBehaviour
         {
             StartCoroutine(Bida());
         }
+        if (other.GetComponent<Collider>().tag == "endatrigger")
+        {
+            
+        }
     }
     IEnumerator Bida() // bíður í eina sek og kallar í fallið endurræsa
     {
@@ -59,8 +63,12 @@ public class Player : MonoBehaviour
         health = 3;
         Bullet.count = 0;
     }
-    void Die()
+    public void LeikLokid()
     {
-      
+
+    }
+    public void Die()
+    {
+        
     }
 }

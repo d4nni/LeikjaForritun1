@@ -9,6 +9,7 @@ TagManager:
   - storiOvinur
   - Fire
   - vatn
+  - endatrigger
   layers:
   - Default
   - TransparentFX
