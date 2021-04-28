@@ -1,11 +1,10 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
-/// <summary>
-/// Handle the projectile launched by the player to fix the robots.
-/// </summary>
 public class Projectile : MonoBehaviour
 {
     Rigidbody2D rigidbody2d;
+    static int count = 0;
     
     void Awake()
     {
@@ -33,6 +32,11 @@ public class Projectile : MonoBehaviour
         if (e != null)
         {
             e.Fix();
+            count += 1;
+            if (count == 13)
+            {
+                SceneManager.LoadScene(2);
+            }
         }
         
         Destroy(gameObject);

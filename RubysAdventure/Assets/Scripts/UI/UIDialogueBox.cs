@@ -2,10 +2,6 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-/// <summary>
-/// This class take care of updating the dialogue text, hiding/showing the dialogue box and changing the portrait.
-/// It is a singleton so the text/portrait can be changed from anywhere.
-/// </summary>
 public class UIDialogueBox : MonoBehaviour
 {
 	public static UIDialogueBox Instance { get; private set; }

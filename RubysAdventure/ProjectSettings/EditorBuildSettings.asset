@@ -8,4 +8,16 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/FyrstaSena.unity
+    guid: 7991fb93276391442a7c199ef25928ba
+  - enabled: 1
+    path: Assets/Scenes/Adalsena.unity
+    guid: 9cc863b5c77f94b4eaefdbd6e89c3779
+  - enabled: 1
+    path: Assets/Scenes/SeinastaSena.unity
+    guid: 4a2e61a6abc2c3e4dadbc0c81821b4c8
+  - enabled: 0
+    path: Assets/Scenes/ExampleScene.unity
+    guid: 8c1f6b3998d70f9499b54ebe7be7bdd9
   m_configObjects: {}

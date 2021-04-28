@@ -1,10 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-/// <summary>
-/// This class hold a reference to the text to update when the ammo count change.
-/// It is a singleton so it can be called from anywhere (e.g. PlayerController SetAmmo)
-/// </summary>
 public class UIAmmoCount : MonoBehaviour 
 {
 	public static UIAmmoCount Instance { get; private set;}
