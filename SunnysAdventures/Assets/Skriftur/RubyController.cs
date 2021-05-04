@@ -53,7 +53,7 @@ public class RubyController : MonoBehaviour
         currentHealth = maxHealth;
 
         // ==== ANIMATION =====
-       // animator = GetComponent<Animator>();
+        animator = GetComponent<Animator>();
 
         // ==== AUDIO =====
         //audioSource = GetComponent<AudioSource>();
@@ -75,21 +75,22 @@ public class RubyController : MonoBehaviour
 
         Vector2 move = new Vector2(horizontal, vertical);
 
-        //if (!Mathf.Approximately(move.x, 0.0f)) //!Mathf.Approximately(move.y, 0.0f))
-        //{
-        //    lookDirection.Set(move.x, move.y);
-        //    lookDirection.Normalize();
-        //
+        if (!Mathf.Approximately(move.x, 0.0f)) //!mathf.approximately(move.y, 0.0f))
+        {
+            lookDirection.Set(move.x, move.y);
+            lookDirection.Normalize();
+        }
 
 
-        currentInput = move;
+
+            currentInput = move;
 
 
         // ============== ANIMATION =======================
 
-        //animator.SetFloat("Look X", lookDirection.x);
-        //animator.SetFloat("Look Y", lookDirection.y);
-        //animator.SetFloat("Speed", move.magnitude);
+        animator.SetFloat("Look X", lookDirection.x);
+        animator.SetFloat("Look Y", lookDirection.y);
+        animator.SetFloat("Speed", move.magnitude);
 
         // ============== PROJECTILE ======================
 
@@ -114,23 +115,23 @@ public class RubyController : MonoBehaviour
 
     void FixedUpdate()
     {
-        //Vector2 position = rigidbody2d.position;
+        Vector2 position = rigidbody2d.position;
 
-        //position = position + currentInput * speed * Time.deltaTime;
+        position = position + currentInput * speed * Time.deltaTime;
 
-        //rigidbody2d.MovePosition(position);
-        if (Input.GetKey(KeyCode.RightArrow))
-        {
-            transform.position += transform.right * hradi;
-        }
-        if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            transform.position -= transform.right * hradi;
-        }
-        if (Input.GetKey(KeyCode.Space))
-        {
-            transform.position += transform.up * hradi;
-        }
+        rigidbody2d.MovePosition(position);
+        //if (Input.GetKey(KeyCode.RightArrow))
+        //{
+        //    transform.position += transform.right * hradi;
+        //}
+        //if (Input.GetKey(KeyCode.LeftArrow))
+        //{
+        //    transform.position -= transform.right * hradi;
+        //}
+        //if (Input.GetKey(KeyCode.Space))
+        //{
+        //    transform.position += transform.up * hradi;
+        //}
     }
 
     // ===================== HEALTH ==================
