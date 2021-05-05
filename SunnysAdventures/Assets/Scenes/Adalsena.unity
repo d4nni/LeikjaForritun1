@@ -282,7 +282,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 175554499}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.81, y: -3.05, z: -10}
+  m_LocalPosition: {x: 0.81, y: -3.082, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 485183485}
@@ -622,7 +622,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.81, y: -3.05, z: -10}
+  m_LocalPosition: {x: 0.81, y: -3.082, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -640,9 +640,9 @@ GameObject:
   - component: {fileID: 746417496}
   - component: {fileID: 746417500}
   - component: {fileID: 746417499}
+  - component: {fileID: 746417502}
   - component: {fileID: 746417501}
   - component: {fileID: 746417498}
-  - component: {fileID: 746417502}
   m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
@@ -718,7 +718,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.81, y: -3.05}
+  m_AnchoredPosition: {x: 0.81, y: -3.082}
   m_SizeDelta: {x: 0.33, y: 0.32}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &746417498
@@ -750,7 +750,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 3
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -769,7 +769,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.002640117, y: -0.0033671558}
+  m_Offset: {x: -0.01, y: 0.0021960102}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -780,7 +780,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.16740099, y: 0.13672775}
+  m_Size: {x: 0.11960164, y: 0.11119596}
   m_EdgeRadius: 0
 --- !u!114 &746417501
 MonoBehaviour:
@@ -803,7 +803,6 @@ MonoBehaviour:
     m_Bits: 567
   m_GroundCheck: {fileID: 279676847}
   m_CeilingCheck: {fileID: 151246285}
-  m_CrouchDisableCollider: {fileID: 746417500}
 --- !u!58 &746417502
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -817,9 +816,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.007353994, y: -0.098777235}
+  m_Offset: {x: -0.007353994, y: -0.09262706}
   serializedVersion: 2
-  m_Radius: 0.063068636
+  m_Radius: 0.06557739
 --- !u!1 &1004275763
 GameObject:
   m_ObjectHideFlags: 0
@@ -854,8 +853,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000016967, y: -1.0609}
-  m_SizeDelta: {x: 734.00006, y: 410.87817}
+  m_AnchoredPosition: {x: 7.2872, y: 0.000015259}
+  m_SizeDelta: {x: 2091.8245, y: 911.7501}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1004275765
 MonoBehaviour:
@@ -906,6 +905,8 @@ GameObject:
   - component: {fileID: 1600294774}
   - component: {fileID: 1600294773}
   - component: {fileID: 1600294775}
+  - component: {fileID: 1600294776}
+  - component: {fileID: 1600294777}
   m_Layer: 0
   m_Name: Tilemap
   m_TagString: Untagged
@@ -4790,6 +4791,33 @@ Tilemap:
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
       m_AllTileFlags: 1073741825
+  - first: {x: 74, y: -6, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 7
+      m_TileSpriteIndex: 7
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      m_AllTileFlags: 1073741825
+  - first: {x: 75, y: -6, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 7
+      m_TileSpriteIndex: 7
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      m_AllTileFlags: 1073741825
+  - first: {x: 76, y: -6, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 7
+      m_TileSpriteIndex: 7
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      m_AllTileFlags: 1073741825
   - first: {x: 77, y: -6, z: 0}
     second:
       serializedVersion: 2
@@ -5589,7 +5617,7 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 405
     m_Data: {fileID: 11400000, guid: 1111afc79129bc64bbe734cbfec566ad, type: 2}
-  - m_RefCount: 30
+  - m_RefCount: 33
     m_Data: {fileID: 11400000, guid: 8b0572900134bed448da6721762ca896, type: 2}
   m_TileSpriteArray:
   - m_RefCount: 60
@@ -5606,10 +5634,10 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 405
     m_Data: {fileID: 21300032, guid: 261212b977f594d5dbc48631a5c1295c, type: 3}
-  - m_RefCount: 30
+  - m_RefCount: 33
     m_Data: {fileID: 21300002, guid: 261212b977f594d5dbc48631a5c1295c, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 510
+  - m_RefCount: 513
     m_Data:
       e00: 1
       e01: 0
@@ -5628,7 +5656,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 510
+  - m_RefCount: 513
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
@@ -5670,6 +5698,49 @@ TilemapCollider2D:
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0.00001
+--- !u!50 &1600294776
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1600294771}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!66 &1600294777
+CompositeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1600294771}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_GeometryType: 0
+  m_GenerationType: 0
+  m_EdgeRadius: 0
+  m_ColliderPaths: []
+  m_CompositePaths:
+    m_Paths: []
+  m_VertexDistance: 0.0005
+  m_OffsetDistance: 0.00005
 --- !u!1 &1644177905
 GameObject:
   m_ObjectHideFlags: 0
