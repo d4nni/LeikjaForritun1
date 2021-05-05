@@ -29,8 +29,6 @@ public class RubyController : MonoBehaviour
     Rigidbody2D rigidbody2d;
     Vector2 currentInput;
 
-    public float hradi = 0.2f;
-
     // ======== HEALTH ==========
     int currentHealth;
     float invincibleTimer;
@@ -56,7 +54,7 @@ public class RubyController : MonoBehaviour
         animator = GetComponent<Animator>();
 
         // ==== AUDIO =====
-        //audioSource = GetComponent<AudioSource>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -75,15 +73,13 @@ public class RubyController : MonoBehaviour
 
         Vector2 move = new Vector2(horizontal, vertical);
 
-        if (!Mathf.Approximately(move.x, 0.0f)) //!mathf.approximately(move.y, 0.0f))
+        if (!Mathf.Approximately(move.x, 0.0f) || !Mathf.Approximately(move.y, 0.0f))
         {
             lookDirection.Set(move.x, move.y);
             lookDirection.Normalize();
         }
 
-
-
-            currentInput = move;
+        currentInput = move;
 
 
         // ============== ANIMATION =======================
@@ -105,9 +101,9 @@ public class RubyController : MonoBehaviour
             {
                 //NonPlayerCharacter character = hit.collider.GetComponent<NonPlayerCharacter>();
                 //if (character != null)
-                {
-                    //character.DisplayDialog();
-                }
+                //{
+                //    character.DisplayDialog();
+                //}
             }
         }
 
@@ -120,18 +116,6 @@ public class RubyController : MonoBehaviour
         position = position + currentInput * speed * Time.deltaTime;
 
         rigidbody2d.MovePosition(position);
-        //if (Input.GetKey(KeyCode.RightArrow))
-        //{
-        //    transform.position += transform.right * hradi;
-        //}
-        //if (Input.GetKey(KeyCode.LeftArrow))
-        //{
-        //    transform.position -= transform.right * hradi;
-        //}
-        //if (Input.GetKey(KeyCode.Space))
-        //{
-        //    transform.position += transform.up * hradi;
-        //}
     }
 
     // ===================== HEALTH ==================
