@@ -26,6 +26,10 @@ public class PlayerMovement : MonoBehaviour {
 		}
 
 	}
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Debug.Log("ok");
+    }
 
     public void OnLanding ()
     {
