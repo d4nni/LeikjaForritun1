@@ -7,13 +7,22 @@ public class PlayerMovement : MonoBehaviour {
 	public CharacterController2D controller;
     public Animator animator;
 
-	public float runSpeed = 40f;
+    public int maxHealth = 5;
+    int currentHealth;
+    public float runSpeed = 40f;
 
-	float horizontalMove = 0f;
+    public Transform respawnPosition;
+
+    float horizontalMove = 0f;
     bool jump = false;
-	
-	// Update is called once per frame
-	void Update () {
+
+    void Start()
+    {
+        currentHealth = maxHealth;
+    }
+
+    // Update is called once per frame
+    void Update () {
 
 		horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
 
@@ -26,6 +35,17 @@ public class PlayerMovement : MonoBehaviour {
 		}
 
 	}
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.tag == "Enemy")
+        {
+            currentHealth -= 1;
+
+            Debug.Log(currentHealth);
+
+            collision.collider.gameObject.SetActive(false);
+        }
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log("ok");
