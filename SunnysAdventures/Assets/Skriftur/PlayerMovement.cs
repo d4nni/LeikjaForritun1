@@ -79,7 +79,7 @@ public class PlayerMovement : MonoBehaviour {
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("ok");
+        GameOver();
     }
 
     public void OnLanding ()
@@ -92,6 +92,11 @@ public class PlayerMovement : MonoBehaviour {
         currentHealth = maxHealth;
         points = 0;
         SceneManager.LoadScene(0);
+    }
+
+    void GameOver()
+    {
+        SceneManager.LoadScene(2);
     }
 
     void FixedUpdate ()
