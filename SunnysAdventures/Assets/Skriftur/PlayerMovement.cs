@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour {
 
@@ -11,7 +13,12 @@ public class PlayerMovement : MonoBehaviour {
     int currentHealth;
     public float runSpeed = 40f;
 
+    static public int points = 0;
+
     public Transform respawnPosition;
+
+    public Text lif;
+    public Text stig;
 
     float horizontalMove = 0f;
     bool jump = false;
@@ -24,6 +31,8 @@ public class PlayerMovement : MonoBehaviour {
     // Update is called once per frame
     void Update () {
 
+        SetText();
+
 		horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
 
         animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
@@ -33,6 +42,15 @@ public class PlayerMovement : MonoBehaviour {
 			jump = true;
             animator.SetBool("IsJumping", true);
 		}
+
+        if (currentHealth == 0)
+        {
+            Respawn();
+        }
+        if (transform.position.y < -30)
+        {
+            Respawn();
+        }
 
 	}
     private void OnCollisionEnter2D(Collision2D collision)
@@ -45,6 +63,19 @@ public class PlayerMovement : MonoBehaviour {
 
             collision.collider.gameObject.SetActive(false);
         }
+        if (collision.collider.tag == "Peningur")
+        {
+            points += 1;
+
+            Debug.Log(currentHealth);
+
+            collision.collider.gameObject.SetActive(false);
+        }
+    }
+    private void SetText()
+    {
+        lif.text = "Líf: " + currentHealth.ToString();
+        stig.text = "Stig: " + points.ToString();
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -54,6 +85,13 @@ public class PlayerMovement : MonoBehaviour {
     public void OnLanding ()
     {
         animator.SetBool("IsJumping", false);
+    }
+
+    void Respawn()
+    {
+        currentHealth = maxHealth;
+        points = 0;
+        SceneManager.LoadScene(0);
     }
 
     void FixedUpdate ()
